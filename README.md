@@ -378,41 +378,6 @@ Computes pixel-wise addition and subtraction between two images.
 
 ---
 
-## Bugs Fixed
-
-| Original File | Bug | Fix Applied |
-|---|---|---|
-| `DM_1L.m` | Referenced undefined vars `Round`, `Max`, `Min`, `Fact` — runtime crash | Rewrote as correct nearest-neighbour upscale; merged into `image_upscale.m` |
-| `HPF_Gaussian.m` | `imshow(output)` called before `output` was ever assigned | Added `output_image = uint8(real(IFT))` |
-| `Gaussian_filter.m` | `filter = filter1 * filter1'` is an outer product, not a 2-D Gaussian | Fixed to use `fspecial('gaussian', ...)` directly |
-| `HistogramMatching.m` | A second unrelated function body was pasted inside the file (invalid MATLAB) | Removed duplicate; rewrote with proper two-image interface |
-| `HistogramEqualization.m` | Crashed on RGB images — assumed single-channel input | Added `rgb2gray` conversion guard |
-| `PowerLaw.m` | Scaling constant `T` computed inside pixel loop — wasted computation | Moved `T` calculation before the loop |
-| `Edge_Detection.m` | `filter_size` parameter accepted but hardcoded kernel size ignored it | Simplified to explicit 3×3 Sobel; parameter removed |
-
----
-
-## Duplicates Removed
-
-The original archive contained two identical copies of every `.m` file:
-- `New folder (2)/` — **removed** (exact duplicates)
-- `Filter Algorithms/` — **kept** as canonical source
-
-Additionally these pairs were **merged** into single canonical files:
-
-| Original Files | Merged Into |
-|---|---|
-| `ButterworthLowpassFilter.m` + `LPF_Butterworth.m` | `butterworth_lpf.m` |
-| `ButterworthHighpassFilter.m` + `HPF_Butterworth.m` | `butterworth_hpf.m` |
-| `GaussianLowpassFilter.m` + `LPF_Gaussian.m` | `gaussian_lpf.m` |
-| `GaussianHighpassFilter.m` + `HPF_Gaussian.m` | `gaussian_hpf.m` |
-| `GaussianHighpassFilter.m` + `HighPassFilter.m` | `gaussian_hpf.m` (identical logic) |
-| `LowPassFilter.m` + `LPF_ideal.m` | `ideal_lpf.m` |
-| `UnsharpenFilter.m` + `Unsharpened_filter.m` | `unsharp_mask_filter.m` |
-| `DM_0L.m` + `DM_1L.m` | `image_upscale.m` |
-
----
-
 ## Contributing
 
 1. Fork the repository.
@@ -423,6 +388,7 @@ Additionally these pairs were **merged** into single canonical files:
 
 ---
 
-## License
+## Author
 
-MIT License — see `LICENSE` for details.
+**Momen Ashraf**  
+[linkedin.com/in/momen-ashraf-](https://linkedin.com/in/momen-ashraf-)
