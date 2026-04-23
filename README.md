@@ -17,8 +17,6 @@ A clean, well-documented collection of classical image processing algorithms imp
   - [Edge Detection](#-edge-detection)
   - [Color Utilities](#-color-utilities)
   - [Image Arithmetic](#-image-arithmetic)
-- [Bugs Fixed](#bugs-fixed)
-- [Duplicates Removed](#duplicates-removed)
 - [Contributing](#contributing)
 
 ---
