@@ -1,0 +1,26 @@
+# MATLAB generated files
+*.asv
+*.m~
+*.mex*
+*.mlapp
+*.mlx
+*.prj
+slprj/
+sccprj/
+
+# Simulink
+*.slxc
+
+# MATLAB figures saved as files
+*.fig
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+*.swp
